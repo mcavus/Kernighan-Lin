@@ -1,3 +1,6 @@
+# Implementation of Kernighan-Lin graph partitioning algorithm
+# Based on the paper: An Efficient Heuristic Procedure for Partitioning Graphs (https://ieeexplore.ieee.org/document/6771089)
+
 class Vertex:
     # id, edges, partition_label
     def __init__(self, id):
@@ -138,7 +141,7 @@ class KernighanLin():
             if g_max > 0:
                 # swap in graph
                 for i in range(jmax):
-                    # find vertices and their change partition_label
+                    # find vertices and change their partition_label
                     for v in self.graph.vertices:
                         if v.id == gains[i][0][0].id:
                             v.partition_label = "B"
